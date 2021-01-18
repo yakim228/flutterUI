@@ -3,28 +3,29 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 
 class Overview extends StatelessWidget {
   Widget build(BuildContext context) {
-    return (Column(
-        // crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                child: Row(children: <Widget>[
-                  Text("TG"),
-                  Text("TG"),
-                  Text("TG"),
-                ]),
-              )),
-          Container(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                child: Row(children: <Widget>[
-                  Text("TG"),
-                  Text("TG"),
-                ]),
-              )),
-          FoodsLine(),
-        ]));
+    return (Column(children: <Widget>[
+      Container(
+        margin: EdgeInsets.symmetric(vertical: 20.0),
+        height: 38.0,
+        child: ListView(
+          padding: EdgeInsets.symmetric(horizontal: 5),
+          scrollDirection: Axis.horizontal,
+          children: <Widget>[
+            FoodsLine(),
+            FoodsLine(),
+            FoodsLine(),
+            FoodsLine(),
+            FoodsLine(),
+          ],
+        ),
+      ),
+      Container(
+        margin: EdgeInsets.symmetric(horizontal: 13),
+        height: 165,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10), color: Colors.white),
+      )
+    ]));
   }
 }
 
@@ -38,20 +39,20 @@ class FoodsLine extends StatefulWidget {
 class _FoodsLineState extends State<FoodsLine> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.all(0),
-      child: Swiper(
-        itemBuilder: (BuildContext context, int index) {
-          return Container(
-            child: Text("Tg"),
-            height: 200,
-            width: 200,
-          );
-        },
-        itemCount: 3,
-        pagination: new SwiperPagination(),
-        control: new SwiperControl(),
-      ),
-    );
+    return Container(
+        margin: EdgeInsets.symmetric(horizontal: 8.0),
+        child: RaisedButton(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30.0),
+              side: BorderSide(color: Colors.black)),
+          onPressed: () {},
+          color: Colors.transparent,
+          elevation: 0.0,
+          textColor: Colors.black,
+          child: Text(
+            "Buy now".toUpperCase(),
+            style: TextStyle(fontSize: 14),
+          ),
+        ));
   }
 }
