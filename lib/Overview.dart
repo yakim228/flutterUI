@@ -57,17 +57,20 @@ class Overview extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(
+                  height: 14,
+                ),
                 Container(
                     width: 300,
                     child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 25),
                       child: Text(
                         "You have no upcoming events",
-                        style: TextStyle(fontSize: 24),
+                        style: TextStyle(fontSize: 20),
                       ),
                     )),
                 SizedBox(
-                  height: 14,
+                  height: 8,
                 ),
                 Container(
                     width: 300,
